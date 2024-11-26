@@ -4,9 +4,11 @@ const express = require('express');
 const multer = require('multer');
 const nodemailer = require('nodemailer');
 const fs = require('fs');
+const cors = require('cors');
 
 // Set up Express app and Multer for file uploads
 const app = express();
+app.use(cors());
 const upload = multer({ dest: 'uploads/' }); // Temporary storage for uploaded files
 
 // Configure Nodemailer with OAuth2
